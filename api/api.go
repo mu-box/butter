@@ -2,11 +2,11 @@ package api
 
 import (
 	"net/http"
-
 	"encoding/json"
+
 	"github.com/gorilla/pat"
-	"github.com/nanobox-io/nanoauth"
-	"github.com/nanopack/butter/config"
+	"github.com/mu-box/butter/config"
+	"github.com/mu-box/golang-microauth"
 )
 
 func Start() error {
@@ -21,7 +21,7 @@ func Start() error {
 
 	// blocking...
 	config.Log.Info("Api Listening on %s", config.HttpListenAddress)
-	return nanoauth.ListenAndServeTLS(config.HttpListenAddress, config.Token, router)
+	return microauth.ListenAndServeTLS(config.HttpListenAddress, config.Token, router)
 }
 
 // handleRequest

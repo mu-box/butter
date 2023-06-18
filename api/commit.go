@@ -4,14 +4,14 @@ import (
 	"net/http"
 	"strconv"
 
-	"github.com/nanopack/butter/repo"
+	"github.com/mu-box/butter/repo"
 )
 
 func showCommits(rw http.ResponseWriter, req *http.Request) {
 	page, _ := strconv.Atoi(req.FormValue("page"))
 	branch := req.FormValue("branch")
 	if branch == "" {
-		branch = "master"
+		branch = "main"
 	}
 	commits, err := repo.ListCommits(branch, page)
 	if err != nil {

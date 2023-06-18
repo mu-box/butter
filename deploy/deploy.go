@@ -1,8 +1,9 @@
 package deploy
 
 import (
-	"github.com/nanopack/butter/config"
 	"io"
+
+	"github.com/mu-box/butter/config"
 )
 
 type (

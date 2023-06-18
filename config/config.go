@@ -78,23 +78,17 @@ func Parse(configFile string) {
 	if c["key_auth_location"] != "" {
 		KeyAuthLocation = c["key_auth_location"]
 	}
-	if c["repo_type"] != "" {
-		RepoType = c["repo_type"]
+	if c["pass_auth_type"] != "" {
+		PassAuthType = c["pass_auth_type"]
 	}
-	if c["repo_location"] != "" {
-		RepoLocation = c["repo_location"]
+	if c["pass_auth_location"] != "" {
+		PassAuthLocation = c["pass_auth_location"]
 	}
-	if c["repo_type"] != "" {
-		RepoType = c["repo_type"]
+	if c["deploy_type"] != "" {
+		DeployType = c["deploy_type"]
 	}
-	if c["repo_location"] != "" {
-		RepoLocation = c["repo_location"]
-	}
-	if c["repo_type"] != "" {
-		RepoType = c["repo_type"]
-	}
-	if c["repo_location"] != "" {
-		RepoLocation = c["repo_location"]
+	if c["deploy_location"] != "" {
+		DeployLocation = c["deploy_location"]
 	}
 	if c["token"] != "" {
 		Token = c["token"]

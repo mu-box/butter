@@ -12,8 +12,8 @@ import (
 
 	"github.com/shazow/go-git"
 
-	"github.com/nanopack/butter/config"
-	"github.com/nanopack/butter/deploy"
+	"github.com/mu-box/butter/config"
+	"github.com/mu-box/butter/deploy"
 )
 
 type (
@@ -81,7 +81,7 @@ func (g gitRepo) ListCommits(branch string, page int) ([]Commit, error) {
 	}
 	page = page - 1
 	for i := 0; i < list.Len() && elem != nil; i++ {
-		if !paging || i / 100 == page {
+		if !paging || i/100 == page {
 			c, ok := elem.Value.(*git.Commit)
 			if !ok {
 				return nil, fmt.Errorf("the element value is of type %#v", elem.Value)
@@ -96,9 +96,9 @@ func (g gitRepo) ListCommits(branch string, page int) ([]Commit, error) {
 			commits = append(commits, com)
 
 		}
-		elem = elem.Next()	
+		elem = elem.Next()
 	}
-	for ; elem != nil;  {
+	for elem != nil {
 	}
 	return commits, nil
 }
@@ -169,7 +169,7 @@ func (g gitRepo) ListFiles(commit string) ([]File, error) {
 	// 		ModTime: scanner.TreeEntry().ModTime(),
 	// 	}
 	// 	files = append(files, file)
-	// }	
+	// }
 
 	return files, nil
 }
@@ -203,7 +203,7 @@ func (g gitRepo) GetFile(commit, path string) (File, error) {
 }
 
 func (g gitRepo) GetFileReader(commit, path string) (io.ReadCloser, error) {
-	fmt.Println("thisisafadsfasfsdaf",path)
+	fmt.Println("thisisafadsfasfsdaf", path)
 	repo, err := g.repo()
 	if err != nil {
 		fmt.Println("repo")
@@ -231,10 +231,10 @@ func (push Push) Match(command string) bool {
 }
 
 func (push Push) Run(command string, ch ssh.Channel) (uint64, error) {
-	//TODO make "master" be dynamic
+	//TODO make "main" be dynamic
 	code, err := gitShell(ch, ch.Stderr(), command)
 	if err == nil {
-		newCommit := getCommit("master")
+		newCommit := getCommit("main")
 		stream := ch.Stderr()
 		err = deploy.Run(stream, newCommit)
 		if err != nil {

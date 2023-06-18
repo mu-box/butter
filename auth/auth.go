@@ -1,7 +1,7 @@
 package auth
 
 import (
-	"github.com/nanopack/butter/config"
+	"github.com/mu-box/butter/config"
 	"golang.org/x/crypto/ssh"
 )
 

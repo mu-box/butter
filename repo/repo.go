@@ -7,7 +7,7 @@ import (
 
 	"golang.org/x/crypto/ssh"
 
-	"github.com/nanopack/butter/config"
+	"github.com/mu-box/butter/config"
 )
 
 type (

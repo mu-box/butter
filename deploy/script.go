@@ -6,7 +6,7 @@ import (
 	"os"
 	"os/exec"
 
-	"github.com/nanopack/butter/config"
+	"github.com/mu-box/butter/config"
 )
 
 type (

@@ -1,12 +1,12 @@
 package main
 
 import (
-	"github.com/nanopack/butter/api"
-	"github.com/nanopack/butter/auth"
-	"github.com/nanopack/butter/config"
-	"github.com/nanopack/butter/deploy"
-	"github.com/nanopack/butter/repo"
-	"github.com/nanopack/butter/server"
+	"github.com/mu-box/butter/api"
+	"github.com/mu-box/butter/auth"
+	"github.com/mu-box/butter/config"
+	"github.com/mu-box/butter/deploy"
+	"github.com/mu-box/butter/repo"
+	"github.com/mu-box/butter/server"
 
 	"github.com/spf13/cobra"
 )

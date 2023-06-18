@@ -2,12 +2,14 @@ package server
 
 import (
 	"fmt"
-	"github.com/nanopack/butter/auth"
-	"github.com/nanopack/butter/config"
-	"golang.org/x/crypto/ssh"
 	"io"
 	"io/ioutil"
 	"net"
+
+	"github.com/mu-box/butter/auth"
+	"github.com/mu-box/butter/config"
+
+	"golang.org/x/crypto/ssh"
 )
 
 var sshServer *ssh.ServerConfig

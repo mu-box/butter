@@ -1,8 +1,9 @@
 package api
 
 import (
-	"github.com/nanopack/butter/repo"
 	"net/http"
+
+	"github.com/mu-box/butter/repo"
 )
 
 func showBranches(rw http.ResponseWriter, req *http.Request) {

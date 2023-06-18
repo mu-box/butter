@@ -1,5 +1,5 @@
-[![butter logo](http://nano-assets.gopagoda.io/readme-headers/butter.png)](http://nanobox.io/open-source#butter)
-[![Build Status](https://travis-ci.org/nanopack/butter.svg)](https://travis-ci.org/nanopack/butter)
+[![butter logo](http://microbox.rocks/assets/readme-headers/butter.png)](http://microbox.cloud/open-source#butter)
+[![Build Status](https://github.com/mu-box/butter/actions/workflows/ci.yaml/badge.svg)](https://github.com/mu-box/butter/actions)
 
 ## Butter
 
@@ -12,13 +12,13 @@ Experimental/Unstable/Incomplete
 
 | Route | Description | Payload | Response |
 | --- | --- | --- | --- |
-| `/files?ref={ref}` | Show the names of all the files at the specific ref, or MASTER | nil | `{file contents}` |
-| `/files/{file}?ref={ref}` | Get the content of the file at the specific ref, or MASTER | nil | `{file contents}` |
-| `/branches` | Get the names of all branches pushed | nil | `["master"]` |
+| `/files?ref={ref}` | Show the names of all the files at the specific ref, or MAIN | nil | `{file contents}` |
+| `/files/{file}?ref={ref}` | Get the content of the file at the specific ref, or MAIN | nil | `{file contents}` |
+| `/branches` | Get the names of all branches pushed | nil | `["main"]` |
 | `/commits` | Get a list of all the commits | nil | `[{"id":"sha","message":"this is a message","author":"me"}]` |
 | `/commits/{commit}` | Get details about a specific commit | nil | `[{"id":"sha","author":"me","message":"this is a message","author_date":"jan","author_email":"me@me.com"}]` |
 
-[![butter logo](http://nano-assets.gopagoda.io/open-src/nanobox-open-src.png)](http://nanobox.io/open-source)
+[![butter logo](http://microbox.rocks/assets/open-src/microbox-open-src.png)](http://microbox.cloud/open-source)
 
 
 ## TODO

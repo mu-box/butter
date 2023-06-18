@@ -3,10 +3,11 @@ package server
 import (
 	"encoding/binary"
 	"errors"
+
 	"golang.org/x/crypto/ssh"
 
-	"github.com/nanopack/butter/config"
-	"github.com/nanopack/butter/repo"
+	"github.com/mu-box/butter/config"
+	"github.com/mu-box/butter/repo"
 )
 
 type (

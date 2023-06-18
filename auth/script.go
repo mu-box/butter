@@ -4,11 +4,12 @@ import (
 	"bytes"
 	"encoding/base64"
 	"fmt"
-	"golang.org/x/crypto/ssh"
 	"os"
 	"os/exec"
 
-	"github.com/nanopack/butter/config"
+	"golang.org/x/crypto/ssh"
+
+	"github.com/mu-box/butter/config"
 )
 
 type (
@@ -67,7 +68,7 @@ func (s ScriptPassAuth) Auth(conn ssh.ConnMetadata, password []byte) (*ssh.Permi
 
 func (s ScriptKeyAuth) Auth(conn ssh.ConnMetadata, key ssh.PublicKey) (*ssh.Permissions, error) {
 	cmd := exec.Command(config.KeyAuthLocation, conn.User(), conn.RemoteAddr().String())
-	k := fmt.Sprintf("%s\n",base64.StdEncoding.EncodeToString(key.Marshal()))
+	k := fmt.Sprintf("%s\n", base64.StdEncoding.EncodeToString(key.Marshal()))
 	keyReader := bytes.NewReader([]byte(k))
 	cmd.Stdin = keyReader
 	output, err := cmd.CombinedOutput()
